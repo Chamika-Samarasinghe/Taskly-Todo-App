@@ -64,3 +64,9 @@ Visit **http://localhost:5173**
 | Backend  | Node.js, Express 4     |
 | Database | MongoDB + Mongoose     |
 | HTTP     | Axios                  |
+
+## Demo Video
+[Watch the demo](https://drive.google.com/file/d/1rooQOC5tf3YyQLC_9WXQQfnFX-4ryb51/view?usp=sharing)
+
+## Code Walkthrough
+[Watch the code walkthrough](https://drive.google.com/file/d/1EkLTl0GDAiFO9DeiF5hkgylslbCZyfCP/view?usp=sharing)
