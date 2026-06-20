@@ -1,0 +1,194 @@
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), border-color var(--transition), background var(--transition), opacity var(--transition);
+  position: relative;
+}
+
+.item:hover {
+  box-shadow: var(--shadow-md);
+  border-color: #cfc7b8;
+}
+
+.item.done {
+  background: var(--done-bg);
+  border-color: var(--done-border);
+  opacity: 0.75;
+}
+
+/* Checkbox button */
+.checkBtn {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  margin-top: 2px;
+}
+
+.checkBtn:hover {
+  border-color: var(--ink-muted);
+  transform: scale(1.1);
+}
+
+.checkBtn.checked {
+  background: var(--done-ink);
+  border-color: var(--done-ink);
+}
+
+/* Content */
+.content { flex: 1; min-width: 0; }
+
+.title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.45;
+  word-break: break-word;
+  transition: text-decoration var(--transition), color var(--transition);
+}
+
+.done .title {
+  text-decoration: line-through;
+  color: var(--done-ink);
+}
+
+.description {
+  font-size: 0.83rem;
+  color: var(--ink-muted);
+  margin-top: 0.3rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.done .description { color: var(--done-ink); }
+
+.date {
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  margin-top: 0.45rem;
+  letter-spacing: 0.01em;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.item:hover .actions { opacity: 1; }
+
+.editBtn,
+.deleteBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-muted);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.editBtn:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.deleteBtn:hover {
+  background: #fde8e8;
+  border-color: #e57373;
+  color: #c62828;
+}
+
+/* Edit form */
+.editForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.editInput,
+.editTextarea {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: var(--bg-input);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: border-color var(--transition);
+  resize: vertical;
+  width: 100%;
+}
+
+.editInput:focus,
+.editTextarea:focus { border-color: var(--border-focus); }
+.inputError { border-color: var(--accent) !important; }
+
+.errorMsg { font-size: 0.78rem; color: var(--accent); }
+
+.editActions { display: flex; gap: 0.5rem; }
+
+.saveBtn,
+.cancelBtn {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), opacity var(--transition);
+}
+
+.saveBtn {
+  background: var(--ink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.saveBtn:hover:not(:disabled) { background: var(--accent); }
+.saveBtn:disabled,
+.cancelBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.cancelBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+}
+
+.cancelBtn:hover:not(:disabled) { background: var(--bg); }
+
+.spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 600ms linear infinite;
+  display: inline-block;
+}
